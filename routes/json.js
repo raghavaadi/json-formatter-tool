@@ -38,7 +38,31 @@ else if(req.body.ma1)
 {
     try{  
         
-        res.send(JSON.stringify(value));
+        res.render('json',{
+            title :'JSON formatter',
+            name : 'Raghav',
+            input:h,
+            ress: JSON.stringify(value)
+        });
+       // res.send(JSON.stringify(value));
+        }
+        catch{
+            console.log('eerror')
+            res.send('enter a valid JSON');
+        }
+    console.log('reached here')
+}
+else if(req.body.ma2)
+{
+    try{  
+        
+        res.render('json',{
+            title :'JSON formatter',
+            name : 'Raghav',
+            input:h,
+            ress: JSON.stringify(value)
+        });
+       // res.send(JSON.stringify(value));
         }
         catch{
             console.log('eerror')
