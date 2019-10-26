@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get('/',function(req,res,next){
 	res.render('index',{
-		title :'Kaiser',
+		title :'JSON formatter',
 		name : 'Raghav'
 	});
 });
