@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+	<title><%=title%></title>
+</head>
+<style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button1 {border-radius: 2px;}
+    .button2 {border-radius: 4px;}
+    .button3 {border-radius: 8px;}
+    .button4 {border-radius: 12px;}
+    .button5 {border-radius: 50%;}
+    </style>
+      
+
+
+
+
+<body>
+        <h3 style="text-align: center;"><%  include template/header.ejs %></h3>
+        <div class="center">
+        <p id="showData"  ></p>
+        </div>
+        <br>
+        <div class="json-page">
+         <div class="form">
+   <form method="POST" action="/json" class="register-form">
+       <table align='center'>
+       <tr>
+           <td>Enter the JSON input here</td>    
+       </tr>
+
+       <tr>
+        <td><textarea id="wmd-input" name="input_json" placeholder="Enter the input here" class="wmd-input js-wz-element s-input bar0 js-post-body-field processed __web-inspector-hide-shortcut__" data-post-type-id="2" cols="92" rows="15" tabindex="101" data-wz-state="256" data-min-length="" spellcheck="false"><%=input%></textarea>
+        </td>
+        </tr>
+       <tr>
+           <td><input type="submit" class="button button4" value="submit" name="ma"></td>
+           <td><input type="submit" class="button button4" value="Escape" name="ma1"></td>
+       </tr>
+       </table>
+   </form>
+   </div>
+       
+   <h3 style="text-align: left;"><%  include result.ejs %></h3>
+</body>
+</html>

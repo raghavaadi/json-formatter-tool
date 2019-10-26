@@ -18,6 +18,7 @@
   "homepage": "https://github.com/raghavaadi/json-formatter-tool#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "comment-json": "^2.2.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
