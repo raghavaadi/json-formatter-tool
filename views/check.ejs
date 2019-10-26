@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hello</title>
+</head>
+<body>
+
+
+      <h3 style="text-align: center;"><%  include template/header.ejs %>
+	  </h3>
+	  <br>
+	  <br>
+	  
+	  <div  >
+<form method="POST" action="/check" >
+	<table  align="center">
+	<tr>
+		<th>check again</th>
+	 	
+    </tr>
+    <tr>
+		    <td>Name</td>
+            <td name="name"><%=name%></td>
+    </tr>
+	<tr>
+			<td>Password</td>
+		<td name="password"><%=password%></td>
+    </tr>
+    <tr>
+			<td>User</td>
+            <td name="user"><%=user%></td>
+		</tr>
+		<tr>
+				<td>Email</td>
+				<td name="email"><%=email%></td>
+			</tr>
+	<tr>
+		<td><input type="submit" value="submit"></td>
+	</tr>
+	</table>
+</form>
+</div>
+
+</body>
+</html>
