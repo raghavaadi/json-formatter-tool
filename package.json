@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/raghavaadi/json-formatter-tool/issues"
   },
-  "homepage": "https://github.com/raghavaadi/json-formatter-tool#readme"
+  "homepage": "https://github.com/raghavaadi/json-formatter-tool#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
