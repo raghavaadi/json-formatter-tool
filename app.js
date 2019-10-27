@@ -5,12 +5,14 @@ var methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const index = require('./routes/index.js')
 const json = require('./routes/json.js')
+const xml = require('./routes/xml.js')
 
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use('/',index);
 app.use('/json',json);
+app.use('/xml',xml);
 app.use( express.static( "public" ) )
 app.use(methodOverride());
 app.use(function (err, req, res, next) {

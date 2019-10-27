@@ -4,10 +4,11 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const jsonlib=require('comment-json')
+var format = require('xml-formatter');
 
 router.get('/',function(req,res,next){
-	res.render('json',{
-		title :'JSON formatter',
+	res.render('xml',{
+		title :'xml formatter',
         name : 'Raghav',
         input: '',
         ress: ''
@@ -15,24 +16,19 @@ router.get('/',function(req,res,next){
 });
 router.post('/', urlencodedParser, function (req, res) {
     console.log(req.body);
-    var h=req.body.input_json
+    var h=req.body.input_xml
     var value=h.toString();
     if(req.body.ma){
     try{  
-    const preFinal =JSON.parse(value)
+    const preFinal =format(value)
     //res.send(JSON.stringify(preFinal, null, 2));
-    res.render('json',{
-		title :'JSON formatter',
+    res.render('xml',{
+		title :'xml formatter',
         name : 'Raghav',
         input:h,
-        ress: JSON.stringify(preFinal, null, 2)
+        ress: preFinal
 	});
-    console.log(JSON.stringify(preFinal, null, 2))
-    const f =JSON.stringify(preFinal, null, 2)
-    const len= Object.keys(preFinal)
-    len.forEach(function(element) {
-        console.log(element);
-      });
+
       
     // for(const objs of Object.keys(JSON.parse(value)) )
     // {
@@ -41,24 +37,24 @@ router.post('/', urlencodedParser, function (req, res) {
     }
     catch{
         console.log('eerror')
-        res.send('enter a valid JSON');
+        res.send('enter a valid xml');
     }
 }
 else if(req.body.ma1)
 {
     try{  
         
-        res.render('json',{
-            title :'JSON formatter',
+        res.render('xml',{
+            title :'xml formatter',
             name : 'Raghav',
             input:h,
-            ress: JSON.stringify(value)
+            ress: format(value)
         });
        // res.send(JSON.stringify(value));
         }
         catch{
             console.log('eerror')
-            res.send('enter a valid JSON');
+            res.send('enter a valid xml');
         }
     console.log('reached here')
 }
@@ -66,17 +62,17 @@ else if(req.body.ma2)
 {
     try{  
         
-        res.render('json',{
-            title :'JSON formatter',
+        res.render('xml',{
+            title :'xml formatter',
             name : 'Raghav',
             input:h,
-            ress: JSON.parse(value)
+            ress: format(value)
         });
        // res.send(JSON.stringify(value));
         }
         catch{
             console.log('eerror')
-            res.send('enter a valid JSON');
+            res.send('enter a valid xml');
         }
     console.log('reached here')
 }
